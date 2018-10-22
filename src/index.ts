@@ -17,7 +17,7 @@ let regex = /.*?\<(.+?)[|\>].*/
 
 async function main() {
     console.log("Starting slack-webshot-bot")
-    const browser = await puppeteer.launch()
+    const browser = await puppeteer.launch({executablePath: "/usr/bin/google-chrome-stable"})
 
     async function makeScreenshot(website: string, path: string) {
         const page = await browser.newPage()
